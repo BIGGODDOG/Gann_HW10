@@ -1,0 +1,13 @@
+<h1>Поиск ресторанов по специализации</h1>
+<form method="get">
+    <input type="text" name="query" placeholder="Например, итальянский" value="{{ query }}">
+    <button type="submit">Искать</button>
+</form>
+
+<ul>
+    {% for restaurant in results %}
+        <li>{{ restaurant.name }} - {{ restaurant.specialization }}</li>
+    {% empty %}
+        <li>Ничего не найдено по запросу "{{ query }}"</li>
+    {% endfor %}
+</ul>

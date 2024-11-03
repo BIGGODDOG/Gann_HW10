@@ -1,0 +1,11 @@
+<h1>Рестораны города</h1>
+<a href="{% url 'add_restaurant' %}">Добавить ресторан</a>
+<ul>
+    {% for restaurant in restaurants %}
+        <li>
+            {{ restaurant.name }} - {{ restaurant.specialization }}
+            <a href="{% url 'edit_restaurant' restaurant.id %}">Изменить</a>
+            <a href="{% url 'delete_restaurant' restaurant.id %}">Удалить</a>
+        </li>
+    {% endfor %}
+</ul>
